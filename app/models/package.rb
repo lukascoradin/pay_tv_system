@@ -1,6 +1,6 @@
 class Package < ApplicationRecord
   belongs_to :plan
-  
+
   has_many :subscriptions
   has_many :packages_additional_services, dependent: :destroy
   has_many :additional_services, through: :packages_additional_services
