@@ -20,7 +20,7 @@ class PlansController < ApplicationController
         format.html { redirect_to @plan, notice: "Plan was successfully created." }
         format.json { render :show, status: :created, location: @plan }
       else
-        format.html { redirect_to :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @plan.errors, status: :unprocessable_entity }
       end
     end

@@ -6,7 +6,7 @@
 
   <p>
     <strong>Price:</strong>
-    <%= additional_service.price %>
+    <%= number_to_currency(additional_service.price, unit: "R$ ", separator: ",", delimiter: ".") %>
   </p>
 
 </div>

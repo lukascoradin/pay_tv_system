@@ -1,4 +1,6 @@
 class Client < ApplicationRecord
+  has_one :subscription
+
   validates :name, presence: true, length: { maximum: 50 }
   validates :date_of_birth, presence: true
 

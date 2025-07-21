@@ -13,7 +13,7 @@
 
   <p>
     <strong>Price:</strong>
-    <%= package.price %>
+    <%= number_to_currency(package.price, unit: "R$ ", separator: ",", delimiter: ".") %>
   </p>
 
 </div>
