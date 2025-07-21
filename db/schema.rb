@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_21_165752) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_21_213157) do
   create_table "additional_services", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 7, scale: 2
@@ -55,15 +55,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_21_165752) do
     t.index ["name"], name: "index_plans_on_name"
   end
 
+  create_table "subscription_additional_services", force: :cascade do |t|
+    t.integer "subscription_id", null: false
+    t.integer "additional_service_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["additional_service_id"], name: "idx_on_additional_service_id_305e585373"
+    t.index ["subscription_id", "additional_service_id"], name: "idx_on_subscription_id_additional_service_id_d4fd962224", unique: true
+    t.index ["subscription_id"], name: "index_subscription_additional_services_on_subscription_id"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.integer "plan_id"
     t.integer "client_id", null: false
-    t.integer "additional_service_id"
     t.integer "package_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["additional_service_id"], name: "index_subscriptions_on_additional_service_id"
-    t.index ["client_id", "plan_id", "package_id", "additional_service_id"], name: "idx_on_client_id_plan_id_package_id_additional_serv_3cafdebaf4", unique: true
+    t.index ["client_id", "plan_id", "package_id"], name: "index_subscriptions_on_client_id_and_plan_id_and_package_id", unique: true
     t.index ["client_id"], name: "index_subscriptions_on_client_id"
     t.index ["package_id"], name: "index_subscriptions_on_package_id"
     t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
@@ -72,7 +80,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_21_165752) do
   add_foreign_key "packages", "plans"
   add_foreign_key "packages_additional_services", "additional_services"
   add_foreign_key "packages_additional_services", "packages"
-  add_foreign_key "subscriptions", "additional_services"
+  add_foreign_key "subscription_additional_services", "additional_services"
+  add_foreign_key "subscription_additional_services", "subscriptions"
   add_foreign_key "subscriptions", "clients"
   add_foreign_key "subscriptions", "packages"
   add_foreign_key "subscriptions", "plans"

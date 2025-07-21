@@ -1,4 +1,6 @@
 class AdditionalService < ApplicationRecord
+  has_many :subscription_additional_services
+  has_many :subscriptions, through: :subscription_additional_services
   has_many :packages_additional_services, dependent: :destroy
   has_many :packages, through: :packages_additional_services
   has_many :subscriptions
