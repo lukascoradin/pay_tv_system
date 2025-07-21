@@ -6,7 +6,7 @@ class Client < ApplicationRecord
 
   def age
     now = Date.today
-    
+
     return unless date_of_birth
     age = now.year - date_of_birth.year
     age -= 1 if now < date_of_birth + age.years

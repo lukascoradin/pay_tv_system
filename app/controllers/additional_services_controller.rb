@@ -34,7 +34,7 @@ class AdditionalServicesController < ApplicationController
       if @additional_service.update(additional_service_params)
         format.html { redirect_to @additional_service, notice: "Additional service was successfully updated." }
         format.json { render :show, status: :ok, location: @additional_service }
-      else 
+      else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @additional_service.errors, status: :unprocessable_entity }
       end
