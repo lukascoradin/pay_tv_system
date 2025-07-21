@@ -6,6 +6,6 @@ class SubscriptionAdditionalServices < ActiveRecord::Migration[8.0]
       t.timestamps
     end
 
-    add_index :subscription_additional_services, [:subscription_id, :additional_service_id], unique: true
+    add_index :subscription_additional_services, [ :subscription_id, :additional_service_id ], unique: true
   end
 end
