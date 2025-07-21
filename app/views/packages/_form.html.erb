@@ -1,0 +1,40 @@
+<%= form_with(model: @package) do |form| %>
+  <% if @package.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% @package.errors.each do |error| %>
+          <%= error.full_message %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :plan_id, "Plan" %>
+    <%= form.select :plan_id, Plan.all.collect { |p| ["#{p.name} - #{number_to_currency(p.price, unit: 'R$ ', separator: ',', delimiter: '.')}", p.id] }, { prompt: "Select a plan" } %>
+  </div>
+
+  <div>
+    <h4>Additional service</h4>
+    <% AdditionalService.all.each do |service| %>
+      <div>
+        <%= form.check_box :additional_service_ids, { multiple: true }, service.id, nil %>
+        <%= service.name %> - R$ <%= number_to_currency(service.price, unit: "R$ ", separator: ",", delimiter: ".") %>
+      </div>
+    <% end %>  
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.number_field :price, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

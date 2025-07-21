@@ -1,0 +1,19 @@
+<div>
+  <h2><%= package.name %></h2>
+  <p><strong>Plan:</strong> <%= package.plan.name %></p>
+
+  <% if package.additional_services.any? %>
+    <p><strong>Additional services:</strong></p>
+    <ul>
+      <% package.additional_services.each do |service| %>
+        <li><%= service.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <strong>Price:</strong>
+    <%= package.price %>
+  </p>
+
+</div>
