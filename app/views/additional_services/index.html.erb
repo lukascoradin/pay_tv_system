@@ -2,8 +2,13 @@
 
 <h1>Additional Services</h1>
 
+<h3>
+  <%= link_to "New additional service", new_additional_service_path %>
+</h3>
+
 <div id="additional_services">
   <% @additional_services.each do |additional_service| %>
+    <hr>
     <%= render additional_service %>
     <p>
       <%= link_to "Show this additional service", additional_service %>
@@ -11,11 +16,3 @@
     <hr>
   <% end %>
 </div>
-<p>
-  <%= link_to "New additional service", new_additional_service_path %>
-</p>
-<p>
-  <%= link_to "Return Home", root_path %>
-</p>
-
-

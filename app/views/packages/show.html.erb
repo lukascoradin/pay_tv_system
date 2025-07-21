@@ -4,5 +4,7 @@
   <%= link_to "Edit this package", edit_package_path(@package) %> |
   <%= link_to "Back to packages", packages_path %>
 
-  <%= button_to "Destroy this package", @package, method: :delete %>
+  <p>
+    <%= button_to "Destroy this package", @package, method: :delete %>
+  </p>
 </div>

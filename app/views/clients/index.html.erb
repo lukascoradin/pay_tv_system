@@ -2,8 +2,13 @@
 
 <h1>Clients</h1>
 
+<h3>
+  <%= link_to "New client", new_client_path %>
+</h3>
+
 <div id="clients">
   <% @clients.each do |client| %>
+    <hr>
     <%= render client %>
     <p>
       <%= link_to "Show this client", client %>
@@ -11,10 +16,3 @@
     <hr>
   <% end %>
 </div>
-<p>
-  <%= link_to "New client", new_client_path %>
-</p>
-<p>
-  <%= link_to "Return Home", root_path %>
-</p>
-

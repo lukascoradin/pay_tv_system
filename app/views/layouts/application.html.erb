@@ -23,6 +23,13 @@
   </head>
 
   <body>
+    <nav style="font-size: 20px;">
+      <%= link_to  "Home", root_path %> |
+      <%= link_to  "Clients", clients_path %> |
+      <%= link_to  "Plans", plans_path %> |
+      <%= link_to  "Additional Services", additional_services_path %> |
+      <%= link_to  "Packages", packages_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

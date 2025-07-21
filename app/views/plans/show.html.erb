@@ -6,5 +6,7 @@
   <%= link_to "Edit this plan", edit_plan_path(@plan) %> |
   <%= link_to "Back to plans", plans_path %>
 
-  <%= button_to "Destroy this plan", @plan, method: :delete %>
+  <p>
+    <%= button_to "Destroy this plan", @plan, method: :delete %>
+  </p>
 </div>

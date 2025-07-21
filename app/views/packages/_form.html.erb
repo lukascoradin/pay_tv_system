@@ -15,12 +15,14 @@
   </div>
 
   <div>
-    <%= form.label :plan_id, "Plan" %>
-    <%= form.select :plan_id, Plan.all.collect { |p| ["#{p.name} - #{number_to_currency(p.price, unit: 'R$ ', separator: ',', delimiter: '.')}", p.id] }, { prompt: "Select a plan" } %>
+    <p>
+      <%= form.label :plan_id, "Plan" %>
+      <%= form.select :plan_id, Plan.all.collect { |p| ["#{p.name} - #{number_to_currency(p.price, unit: 'R$ ', separator: ',', delimiter: '.')}", p.id] }, { prompt: "Select a plan" } %>
+    </p>
   </div>
 
   <div>
-    <h4>Additional service</h4>
+    Additional service
     <% AdditionalService.all.each do |service| %>
       <div>
         <%= form.check_box :additional_service_ids, { multiple: true }, service.id, nil %>
@@ -30,8 +32,10 @@
   </div>
 
   <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price, step: 0.01 %>
+    <p>
+      <%= form.label :price, style: "display: block" %>
+      <%= form.number_field :price, step: 0.01 %>
+    </p>
   </div>
 
   <div>
