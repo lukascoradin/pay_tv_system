@@ -5,6 +5,10 @@ class Subscription < ApplicationRecord
 
   has_many :subscription_additional_services, dependent: :destroy
   has_many :additional_services, through: :subscription_additional_services
+  has_many :billing_accounts, dependent: :destroy
+  has_many :invoices
+
+  has_one :booklet
 
   validate :must_have_plan_or_package
   validate :addons_only_with_plan

@@ -16,7 +16,7 @@
   <div>
     <p>
       <%= form.label :plan_id, "Plan" %><br>
-      <%= form.collection_select :plan_id, Plan.all, :id, :name, prompt: "Select plan" %>
+      <%= form.collection_select :plan_id, Plan.all, :id, :name, include_blank: true %>
     </p>
   </div>
 

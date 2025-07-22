@@ -2,6 +2,7 @@ class Package < ApplicationRecord
   belongs_to :plan
 
   has_many :subscriptions
+  has_many :billing_accounts, as: :billable
   has_many :packages_additional_services, dependent: :destroy
   has_many :additional_services, through: :packages_additional_services
 
