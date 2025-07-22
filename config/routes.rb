@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :plans
   resources :additional_services
   resources :packages
+  resources :subscriptions
 end

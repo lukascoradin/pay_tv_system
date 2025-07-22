@@ -19,7 +19,7 @@ class Client < ApplicationRecord
 
   def adult
     if date_of_birth.present? && age < 18
-      errors.add(:date_of_birth, "Clients under 18 cannot be registered")
+      errors.add(:base, "Clients under 18 cannot be registered")
     end
   end
 end

@@ -17,7 +17,7 @@ class Package < ApplicationRecord
 
   def must_have_additional_service
     if additional_services.empty?
-      errors.add(:additional_services, "must be included")
+      errors.add(:base, "Additional service must be included")
     end
   end
 

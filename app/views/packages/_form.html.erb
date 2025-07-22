@@ -1,11 +1,7 @@
 <%= form_with(model: @package) do |form| %>
   <% if @package.errors.any? %>
     <div style="color: red">
-      <ul>
-        <% @package.errors.each do |error| %>
-          <%= error.full_message %>
-        <% end %>
-      </ul>
+      <p><%= @package.errors.full_messages.join(", ") %></p>
     </div>
   <% end %>
 

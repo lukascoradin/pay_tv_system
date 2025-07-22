@@ -1,0 +1,42 @@
+<%= form_with(model: subscription, local: true) do |form| %>
+  <% if subscription.errors.any? %>
+    <div style="color: red">
+      <p><%= @subscription.errors.full_messages.join(", ") %></p>
+    </div>
+  <% end %>
+
+  <div>
+    <p>
+      <%= form.label :client_id, "Client" %><br>
+      <%= form.collection_select :client_id, Client.all, :id, :name, prompt: "Select client" %>
+    </p>      
+  </div>
+
+  <hr>
+  <div>
+    <p>
+      <%= form.label :plan_id, "Plan" %><br>
+      <%= form.collection_select :plan_id, Plan.all, :id, :name, prompt: "Select plan" %>
+    </p>
+  </div>
+
+  <div>
+    Additional service
+    <% AdditionalService.all.each do |service| %>
+      <div>
+        <%= form.check_box :additional_service_ids, { multiple: true }, service.id, nil %>
+        <%= service.name %>
+      </div>
+    <% end %>  
+  </div>
+  <hr>
+
+  <div>
+    <p>
+      <%= form.label :package_id, "Package" %><br>
+      <%= form.collection_select :package_id, Package.all, :id, :name, include_blank: true %>
+    </p>
+  </div>
+
+  <%= form.submit %>
+<% end %>

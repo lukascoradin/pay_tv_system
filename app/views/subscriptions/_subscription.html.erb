@@ -1,0 +1,21 @@
+<div>
+  <h2><%= subscription.client.name %></h2>
+
+  <% if subscription.plan.present? %>
+    <p><strong>Plan:</strong> <%= subscription.plan.name %></p>
+  <% end %>
+
+  <% if subscription.additional_services.any? %>
+    <p><strong>Additional services:</strong></p>
+    <ul>
+      <% subscription.additional_services.each do |subs| %>
+        <li><%= subs.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if subscription.package.present? %>
+    <p><strong>Package:</strong> <%= subscription.package.name %></p>
+  <% end %>
+
+</div>

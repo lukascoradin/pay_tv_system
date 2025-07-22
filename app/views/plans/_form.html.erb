@@ -1,11 +1,7 @@
 <%= form_with(model: plan) do |form| %>
   <% if plan.errors.any? %>
     <div style="color: red">
-      <ul>
-        <% plan.errors.each do |error| %>
-          <%= error.full_message %>
-        <% end %>
-      </ul>
+      <p><%= @plan.errors.full_messages.join(", ") %></p>
     </div>
   <% end %>
 
