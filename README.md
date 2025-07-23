@@ -8,6 +8,7 @@ O sistema foi desenvolvido em Ruby on Rails. Cada cliente pode possuir assinatur
 
 O sistema conta com:
 - CRUD completo de clientes, planos, pacotes, assinaturas, contas, faturas e carnês.
+- Modelagem com uso de join_table e associações polimórficas. 
 - Geração automática de contas, faturas e carnê ao criar uma assinatura.
 - Visualização das faturas de um carnê específico.
 - Navegação entre a fatura, carnê e a conta correspondente.
