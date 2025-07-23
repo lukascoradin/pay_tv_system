@@ -1,0 +1,17 @@
+<p><strong>Cliente:</strong> <%= @booklet.subscription.client.name %></p>
+<p><strong>Assinatura:</strong> <%= @booklet.subscription.id %></p>
+<p><strong>Período:</strong> <%= @booklet.start_date %> até <%= @booklet.end_date %></p>
+<p><strong>Total price:</strong> <%= number_to_currency(@booklet.value, unit: "R$ ", separator: ",", delimiter: ".") %></p>
+
+
+<h2>Invoices</h2>
+<ul>
+  <% @invoices.each do |invoice| %>
+    <li>
+      <%= link_to "Invoice - #{invoice.due_date}", invoice_path(invoice, booklet_id: @booklet.id) %> - 
+      <%= number_to_currency(invoice.value, unit: "R$ ", separator: ",", delimiter: ".") %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to Booklets", booklets_path %>

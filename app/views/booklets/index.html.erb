@@ -1,0 +1,12 @@
+<h1>Billings</h1>
+
+<div id="booklets">
+  <% @booklets.each do |booklet| %>
+    <hr>
+    <%= render booklet %>
+    <p>
+      <%= link_to "Show Booklet", booklet %>
+    </p>
+    <hr>
+  <% end %>
+</div>

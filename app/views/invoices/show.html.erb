@@ -1,0 +1,9 @@
+<p><strong>Client:</strong> <%= @invoice.subscription.client.name %></p>
+<p><strong>Subscription:</strong> <%= @invoice.subscription.id %></p>
+<p><strong>Invoice due date:</strong> <%= @invoice.due_date %></p>
+<p><strong>Price month:</strong> <%= number_to_currency(@invoice.value, unit: "R$ ", separator: ",", delimiter: ".") %></p>
+
+
+<% if params[:booklet_id].present? %>
+  <%= link_to "Back to Booklet", booklet_path(params[:booklet_id]) %>
+<% end %>

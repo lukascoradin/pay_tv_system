@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "booklets/index"
+  get "booklets/show"
+  get "invoices/index"
+  get "invoices/show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,9 +15,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "home#index"
-  resources :clients
-  resources :plans
   resources :additional_services
+  resources :booklets, only: [ :index, :show ]
+  resources :clients
+  resources :invoices, only: [ :show ]
   resources :packages
+  resources :plans
   resources :subscriptions
 end

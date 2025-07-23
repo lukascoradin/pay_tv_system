@@ -15,6 +15,6 @@ class BookletGenerator
 
     invoices.each do |invoice|
       invoice.update!(booklet: booklet)
-    end  
+    end
   end
 end

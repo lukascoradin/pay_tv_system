@@ -1,0 +1,6 @@
+<p><strong>Client:</strong> <%= booklet.subscription.client.name %></p>
+<p><strong>Subscription:</strong> <%= booklet.subscription.id %></p>
+<p><strong>Start date:</strong> <%= booklet.start_date %></p>
+<p><strong>End date:</strong> <%= booklet.end_date %></p>
+<p><strong>Total price:</strong> <%= number_to_currency(booklet.value, unit: "R$ ", separator: ",", delimiter: ".") %></p>
+
