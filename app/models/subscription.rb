@@ -13,6 +13,14 @@ class Subscription < ApplicationRecord
   validate :must_have_plan_or_package
   validate :addons_only_with_plan
 
+  after_create :generate_billing
+
+  def generate_billing
+    BillingAccountsGenerator.new(self).call
+    InvoiceGenerator.new(self).call
+    BookletGenerator.new(self).call
+  end
+
   private
 
   def must_have_plan_or_package

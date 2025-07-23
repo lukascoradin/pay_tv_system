@@ -17,10 +17,6 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        BillingAccountsGenerator.new(@subscription).call
-        InvoiceGenerator.new(@subscription).call
-        BookletGenerator.new(@subscription).call
-
         format.html { redirect_to @subscription, notice: "Subscription was successfully created." }
         format.json { render :show, status: :created, location: @subscription }
       else
