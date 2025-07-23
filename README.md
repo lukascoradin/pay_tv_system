@@ -7,11 +7,11 @@ Este projeto é um sistema de gerenciamento de assinaturas para clientes, com ge
 O sistema foi desenvolvido em Ruby on Rails. Cada cliente pode possuir assinaturas (`Subscription`). A cada nova assinatura, o sistema gera automaticamente um `Booklet`, que representa um carnê de pagamentos, contendo 12 `Invoices` mensais.
 
 O sistema conta com:
-- CRUD completo de clientes, planos, pacotes, assinaturas, contas, faturas e carnês.
+- CRUD de clientes, planos, pacotes, assinaturas, contas, faturas e carnês.
 - Modelagem com uso de join_table e associações polimórficas. 
 - Geração automática de contas, faturas e carnê ao criar uma assinatura.
 - Visualização das faturas de um carnê específico.
-- Navegação entre a fatura, carnê e a conta correspondente.
+- Navegação entre as telas de clientes, planos, pacotes, assinaturas, faturas e carnê correspondente.
 - Interface simples com HTML e ERB.
 
 ## ✅ Pré-requisitos
