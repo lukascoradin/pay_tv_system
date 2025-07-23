@@ -1,24 +1,33 @@
-# README
+# Pay TV System – Sistema de Faturamento por Assinatura
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este projeto é um sistema de gerenciamento de assinaturas para clientes, com geração automática de faturas e carnê. O foco principal é facilitar o controle de cobranças recorrentes e organizar as faturas em ciclos mensais agrupados por assinatura.
 
-Things you may want to cover:
+## 📌 Descrição do Projeto
 
-* Ruby version
+O sistema foi desenvolvido em Ruby on Rails. Cada cliente pode possuir assinaturas (`Subscription`). A cada nova assinatura, o sistema gera automaticamente um `Booklet`, que representa um carnê de pagamentos, contendo 12 `Invoices` mensais.
 
-* System dependencies
+O sistema conta com:
+- CRUD completo de clientes, planos, pacotes, assinaturas, contas, faturas e carnês.
+- Geração automática de contas, faturas e carnê ao criar uma assinatura.
+- Visualização das faturas de um carnê específico.
+- Navegação entre a fatura, carnê e a conta correspondente.
+- Interface simples com HTML e ERB.
 
-* Configuration
+## ✅ Pré-requisitos
 
-* Database creation
+Antes de iniciar, certifique-se de ter os seguintes itens instalados:
 
-* Database initialization
+- Ruby 3.3.0
+- Rails 8.0
+- SQLite3 
+- Bundler
 
-* How to run the test suite
+## 🛠️ Instalação
 
-* Services (job queues, cache servers, search engines, etc.)
+Clone o projeto e siga os passos abaixo:
 
-* Deployment instructions
-
-* ...
+```bash
+git clone https://github.com/seu-usuario/pay-tv-system.git
+cd pay-tv-system
+bundle install
+rails db:setup
