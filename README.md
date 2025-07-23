@@ -28,6 +28,33 @@ Clone o projeto e siga os passos abaixo:
 
 ```bash
 git clone https://github.com/seu-usuario/pay-tv-system.git
+
 cd pay-tv-system
+```
+
+Instale as dependências:
+
+```bash
 bundle install
-rails db:setup
+```
+
+Configure o banco de dados:
+
+```bash
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+## 🚀 Implantação
+
+Para executar o sistema localmente:
+
+```bash
+rails server
+```
+Acesse via: http://localhost:3000
+
+
+## 🧑‍💻 Autor
+Desenvolvido por José Lucas Coradin
