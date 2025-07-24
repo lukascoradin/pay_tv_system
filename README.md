@@ -14,6 +14,13 @@ O sistema conta com:
 - Navegação entre as telas de clientes, planos, pacotes, assinaturas, faturas e carnê correspondente.
 - Interface simples com HTML e ERB.
 
+## 📊 Diagrama da assinatura(`Subscription`)
+
+O sistema permite ao cliente montar uma assinatura de três formas distintas:
+
+<img width="2570" height="1158" alt="image" src="https://github.com/user-attachments/assets/4dd8230b-5a0b-4d32-bc28-4b9d0748cc4e" />
+
+
 ## ✅ Pré-requisitos
 
 Antes de iniciar, certifique-se de ter os seguintes itens instalados:
@@ -28,9 +35,9 @@ Antes de iniciar, certifique-se de ter os seguintes itens instalados:
 Clone o projeto e siga os passos abaixo:
 
 ```bash
-git clone https://github.com/seu-usuario/pay-tv-system.git
+git clone https://github.com/seu-usuario/pay_tv_system.git
 
-cd pay-tv-system
+cd pay_tv_system
 ```
 
 Instale as dependências:
