@@ -35,7 +35,7 @@ Antes de iniciar, certifique-se de ter os seguintes itens instalados:
 Clone o projeto e siga os passos abaixo:
 
 ```bash
-git clone https://github.com/seu-usuario/pay_tv_system.git
+git clone https://github.com/lukascoradin/pay_tv_system.git
 
 cd pay_tv_system
 ```
